@@ -1,0 +1,20 @@
+[package]
+name = "xscalenet"
+version = "0.1.0"
+edition = "2021"
+description = "Efficient Rust reimplementation of the ScaleNet network reconstruction + Spectral Consensus Strategy (core path)"
+license = "GPL-3.0-or-later"
+
+[[bin]]
+name = "xscalenet"
+path = "src/main.rs"
+
+[dependencies]
+nalgebra = "0.33"
+rayon = "1.10"
+libm = "0.2"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
